@@ -1,6 +1,26 @@
 import Foundation
 
-let pizzaInInches: Int = 16 // stored property
+var pizzaInInches: Int = 10 {
+    // set our property observer
+    willSet {
+//        print(pizzaInInches)
+//        print(newValue)
+    }
+    didSet {
+//        print(oldValue)
+//        print(pizzaInInches)
+        if pizzaInInches >= 18 {
+            print("Invalid size specified, pizzaInInches set to 18.")
+            pizzaInInches = 18
+            
+        }
+    }
+}
+
+pizzaInInches = 33
+print(pizzaInInches)
+
+
 var numberOfPeople: Int = 12
 let slicesPerPerson: Int = 4
 
